@@ -1,0 +1,60 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- PROFILE CONTENT -->
+<div id="content_container">				
+  <h1>Profile</h1>
+  <div class="block">
+    {% for p in profile_data %}
+    <blockquote class="profile_quote">
+      <p><span class="yellow"><i class="bi bi-quote"></i></span>
+      "{{ p.profile_quote }}"</p>
+      <p>- {{ p.quote_writer }}</p>
+    </blockquote>
+  </div>
+  <div class="block">
+    <h2>A few words about me</h2>
+    <p>{{ p.about_me }}</p>				
+  </div>
+  {% endfor %}
+
+  <div class="horizontal_line">
+    <div class="line_left"></div>
+    <div class="left_circle"></div>
+    <div class="central_circle"></div>
+    <div class="right_circle"></div>
+    <div class="line_right"></div>
+  </div>
+  <div class="block">
+    <h2>Philosophy</h2>
+    {% for txt in philosophy %}
+    <p>{{ txt.headline }}</p>
+    <div class="philosophy_content">
+      <p>{{ txt.content }}</p>
+    {% endfor %}
+      {% for list in points %}
+      <ul>
+        <li>{{ list }}</li>
+      </ul>
+      {% endfor %}
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="horizontal_line">
+    <div class="line_left"></div>
+    <div class="left_circle"></div>
+    <div class="central_circle"></div>
+    <div class="right_circle"></div>
+    <div class="line_right"></div>
+  </div>
+  <div class="last block">
+    <h2>Interests & Hobbies</h2>
+    <p>I'm passionate about technology and human behavior, both determine almost all my interests and hobbies:</p>
+    {% for hobbie in hobbie_data %}
+    <ul>
+      <li>{{ hobbie.hobbies }}</li>
+    </ul>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% load static %}
+{% for user in user_object %}
+  <div id="left_col">
+    {% comment %} <div class="profile_frame">
+      <div class="profile_picture"></div>
+       <img src="https://www.pexels.com/photo/man-in-black-suit-wearing-eyeglasses-5378700/" alt="profile picture"> 
+    </div> {% endcomment %}
+    <div class="hello_content">
+      <h2>Hello!</h2>
+      <p>{{ user.hello_content}}</p>
+    </div> 
+    <div class="contact_details_content">
+      <h2>Personal details</h2>
+      <p class="purple">Phone:</p>
+      <p>{{ user.phone }}</p>
+
+      <p class="purple">Email:</p>
+      <p>{{ user.email }}</p>
+
+      <p class="purple">Current Address:</p>
+      <p>{{ user.current_address }}</p>
+
+      <p class="purple">Permanent Address:</p>
+      <p>{{ user.permanent_address }}</p>
+      
+
+      <p class="purple">Date of Birth:</p>
+      <p>{{ user.dob }}</p>
+      
+
+      <p class="purple">Nationality:</p>
+      <p>{{ user.nationality }}</p>
+      
+      <p class="purple">Marital Status:</p>
+      <p>{{ user.marital_status }}</p>
+      {% endfor %}
+      <p class="purple">Language:</p>
+      {% for l in lang %}
+      <ul>
+        <li>{{ l.language }}</li>
+      </ul>
+      {% endfor %}
+      
+    </div>
+    
+    {% for user in user_object %}
+    <a href="mailto:{{ user.email }}" class="send_message_button">
+      <span class="cut1"></span>
+      <span class="cut2"></span>
+      <p class="content">Send me E-mail <i class="bi bi-envelope-arrow-up"></i></p>
+    </a>
+    {% endfor %}
+    <div class="get_social_content">
+      <h2>Get social</h2>
+      <ul class="social_icons horizontal_list">
+        <li><a class="so_icons" href="{{ github.sorce }}"><i class="bi bi-github"></i></a></li>
+        <li><a class="so_icons" href="{{ insta.sorce }}"><i class="bi bi-instagram"></i></a></li>
+        <li><a class="so_icons" href="{{ linkedin.sorce }}"><i class="bi bi-linkedin"></i></a></li>
+        <li><a class="so_icons" href="{{ whatsapp.sorce }}"><i class="bi bi-whatsapp"></i></a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>

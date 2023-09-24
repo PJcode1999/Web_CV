@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="content_container">			
+  <h1>Projects</h1>
+
+    <div class="project_block">
+      <div class="hrl1"></div>
+        <h2>{{ project1.typo }}</h2>
+      <div class="d-flex">
+        <h4>{{ project1.name }}</h4>
+      </div>
+      <div class="d-flex">
+        <p>{{ project1.info }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Technology</span> : {{ project1.technologies }}</p>
+        <p>{{ project1.clientname }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Start Date</span> : {{ project1.startdate }}</p>
+        <p>{{ project1.place }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">End Date</span> : {{ project1.enddate }}</p>
+        <a class="purple" href="{{ project1.source }}" style='text-decoration: none'>Source Code</a>
+      </div>   
+    </div>
+
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+
+    <div class="last project_block">
+      <div class="hrl2"></div>
+        <h2>{{ project2.typo }}</h2>
+      <div class="d-flex">
+        <h4>{{ project2.name }}</h4>
+      </div>
+      <div class="d-flex">
+        <p>{{ project2.info }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Technology</span> : {{ project2.technologies }}</p>
+        <p>{{ project2.clientname }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Start Date</span> : {{ project2.startdate }}</p>
+        <p>{{ project2.place }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">End Date</span> : {{ project2.enddate }}</p>
+        <a class="purple" href="{{ project2.source }}" style='text-decoration: none'>Source Code</a>
+      </div>   
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load static %}
+<div id="header">
+    <!-- LOGOTYPE/NAME -->
+    {% for user in user_object %}
+    <div class="header_logotype_container">
+      <h1 class="logotype_name">{{ user.first_name }} <span class="purple">{{ user.last_name }}</span></h1>
+      <h2 class="logotype_occupation">{{ user.occupation }}</h2>
+    </div>
+    {% endfor %}
+    <!-- MAIN MENU -->
+    <div class="header_menu_container">
+     
+      <div class="clear"></div>
+      <ul class="header_menu horizontal_list">
+        <li><a class="{% if request.path == '/' %} purple {% endif %}" href="{% url "profile" %}">Profile</a></li>
+        <li><a class="{% if request.path == '/education/' %} purple {% endif %}" href="{% url "education" %}">Education</a></li>
+        <li><a class="{% if request.path == '/skills/' %} purple {% endif %}" href="{% url "skills" %}">Skills</a></li>
+        <li><a class="{% if request.path == '/experience/' %} purple {% endif %}" href="{% url "experience" %}">Work Experience</a></li>
+        <li><a class="{% if request.path == '/project/' %} purple {% endif %}" href="{% url "project" %}">Projects</a></li>
+        <li><a class="{% if request.path == '/accomplishment/' %} purple {% endif %}" href="{% url "accomplishment" %}">Acomplishement</a></li>
+      </ul>
+    </div>
+</div>

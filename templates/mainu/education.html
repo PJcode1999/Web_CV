@@ -1,0 +1,77 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="content_container">			
+  <h1>Education</h1>
+    <div class="edu_block">
+      <div class="hrl"></div>
+      <h2>Bachelors</h2>
+      <div class="d-flex">
+        <p>{{ bachelor.course }}</p>
+        <p>{{ bachelor.clg_address }}</p>
+      </div>
+      <div class="d-flex">
+        <p>{{ bachelor.clg_name }}</p>
+        <p>{{ bachelor.passing_date }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">University</span> : {{ bachelor.university_board }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">CGPA</span> : {{ bachelor.percentage }}</p>
+      </div>
+    </div>
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+    <div class="edu_block">
+      <div class="hrl"></div>
+      <h2>12th/HSC</h2>
+      <div class="d-flex">
+        <p>{{ hsc.course }}</p>
+        <p>{{ hsc.clg_address }}</p>
+      </div>
+      <div class="d-flex">
+        <p>{{ hsc.clg_name }}</p>
+        <p>{{ hsc.passing_date }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Board</span> : {{ hsc.university_board }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Percentage</span> : {{ hsc.percentage }}</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+    <div class="last edu_block">
+      <div class="hrl"></div>
+      <h2>10th/SSC</h2>
+      <div class="d-flex">
+        <p>{{ ssc.course }}</p>
+        <p>{{ ssc.clg_address }}</p>
+      </div>
+      <div class="d-flex">
+        <p>{{ ssc.clg_name }}</p>
+        <p>{{ ssc.passing_date }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Board</span> : {{ ssc.university_board }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Percentage</span> : {{ ssc.percentage }}</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}

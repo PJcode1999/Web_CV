@@ -1,0 +1,81 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="content_container">			
+  <h1>Skills</h1>
+    <div class="skills_block">
+      <div class="hrl1"></div>
+      <h2>Programming Language</h2>
+      {% for p in prog_lang %}
+      <div class="d-flex">
+        <p><span>{{ p.name}} :</span>  {{ p.info }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+    <div class="skills_block">
+      <div class="hrl2"></div>
+      <h2>Frameworks</h2>
+      {% for f in framework %}
+      <div class="d-flex">
+        <p><span>{{ f.name}} :</span>  {{ f.info }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+    <div class="skills_block">
+      <div class="hrl3"></div>
+      <h2>Scripting Languages</h2>
+      {% for s in scr_lng %}
+      <div class="d-flex">
+        <p><span>{{ s.name}} :</span>  {{ s.info }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+    <div class="skills_block">
+      <div class="hrl4"></div>
+      <h2>Database Technologies</h2>
+      {% for d in dbtech %}
+      <div class="d-flex">
+        <p><span>{{ d.name}} :</span>  {{ d.info }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+    <div class="last skills_block">
+      <div class="hrl5"></div> 
+      <h2>Soft Skills</h2>
+      {% for s in softskills %}
+      <div class="d-flex">
+        <p><span>{{ s.name}} :</span>  {{ s.info }}</p>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+{% endblock %}

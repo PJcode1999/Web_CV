@@ -1,0 +1,55 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="content_container">			
+  <h1>Work Experience</h1>
+
+    <div class="experience_block">
+      <div class="hrl1"></div>
+        <h2>{{ exp1.position }}</h2>
+      <div class="d-flex">
+        {% comment %} <p>{{ exp1.info }}</p> {% endcomment %}
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Start Date</span> : {{ dura1.startdate }}</p>
+        <p><span class="purple">End Date</span> : {{ dura1.enddate }}</p>
+        <p><span class="purple">Duration</span> : {{ dura1.dura }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Technology</span> : {{ exp1.technology }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Company</span> : {{ exp1.company }}</p>
+        <a class="purple" href="{{ exp1.source }}" style='text-decoration: none'>Certificate</a>
+      </div>    
+    </div>
+
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+
+    <div class="last experience_block">
+      <div class="hrl2"></div>
+        <h2>{{ exp2.position }}</h2>
+      <div class="d-flex">
+        {% comment %} <p>{{ exp2.info }}</p> {% endcomment %}
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Start Date</span> : {{ dura2.startdate }}</p>
+        <p><span class="purple">End Date</span> : {{ dura2.enddate }}</p>
+        <p><span class="purple">Duration</span> : {{ dura2.dura }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Technology</span> : {{ exp2.technology }}</p>
+      </div>
+      <div class="d-flex">
+        <p><span class="purple">Company</span> : {{ exp2.company }}</p>
+        <a class="purple" href="{{ exp2.source }}">Certificate</a>
+      </div>
+    </div>
+</div>
+{% endblock %}

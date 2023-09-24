@@ -1,0 +1,28 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="content_container">			
+  <h1>Accomplishments</h1>
+  {% for acc in accomplish %}
+    <div class="accomplishment_block">
+      <div class="hrl">
+        <h2><i class="bi bi-check-square" ></i> {{ acc.name }}</h2>
+      </div>
+      <div class="mod">
+        <a href="{{ acc.source }}">
+          <img class="img"src="{{ acc.files.url }}" alt="Certificate">
+        </a>
+      </div>  
+    </div>
+    {% if acc.id != 4 %}
+    <div class="horizontal_line">
+      <div class="line_left"></div>
+      <div class="left_circle"></div>
+      <div class="central_circle"></div>
+      <div class="right_circle"></div>
+      <div class="line_right"></div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
