@@ -23,8 +23,6 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-slljh6+h!+7jy!cuyybeu%ab%rzztkk9#=@t6q07e#d6v2n#5%'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
@@ -121,23 +119,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+DEBUG = False
+
 STATIC_HOST = "https://d4663kmspf1sqa.cloudfront.net" if not DEBUG else ""
 STATIC_URL = STATIC_HOST + "/static/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Absolute path for collectstatic (production)
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Directory for static files (development)
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Directory for static files (development)
 
 # Media settings
 MEDIA_URL = '/media/'  # URL path for accessing media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute path where media files are stored
 
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    }
 }
 
 # Default primary key field type
