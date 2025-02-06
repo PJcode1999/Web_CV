@@ -1,4 +1,4 @@
-from .models import *
+from .models import SocialLink,PersonalDetailsModel,Language
 
 def const_data(request):
     social = SocialLink.objects.all()

@@ -170,7 +170,7 @@ class ProjctsModel(models.Model):
 # Model for accomplishement
 class AccomplishmentModel(models.Model):
     name = models.CharField(max_length=200)
-    files = models.ImageField()
+    files = models.ImageField(upload_to='media/')
     source = models.URLField()
     
     def __str__(self):

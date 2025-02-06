@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
 from .models import *
+
 # Create your views here.
 
 def profile(request):
@@ -88,5 +89,6 @@ def project(request):
 
 def accomplishment(request):
     accomplish = AccomplishmentModel.objects.all()
-    context={'accomplish':accomplish}
+    context={'accomplish': accomplish}
     return render(request, "mainu/accomplishment.html",context)
+
