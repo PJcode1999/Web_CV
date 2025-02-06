@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-slljh6+h!+7jy!cuyybeu%ab%rzztkk9#=@t6q07e#d6v2n#5%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
@@ -46,6 +45,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_HOST = "https://d4663kmspf1sqa.cloudfront.net" 
+STATIC_HOST = "https://d4663kmspf1sqa.cloudfront.net" if not DEBUG else ""
 STATIC_URL = STATIC_HOST + "/static/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Absolute path for collectstatic (production)
@@ -133,9 +133,6 @@ MEDIA_URL = '/media/'  # URL path for accessing media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute path where media files are stored
 
 STORAGES = {
-    # "default": {
-    #     "BACKEND": "django.core.files.storage.FileSystemStorage",
-    # },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
