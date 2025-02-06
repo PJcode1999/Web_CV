@@ -121,11 +121,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'  # URL prefix for serving static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Absolute path for collectstatic (production)
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Directory for static files (development)
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Directory for static files (development)
 
 # Media settings
 MEDIA_URL = '/media/'  # URL path for accessing media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute path where media files are stored
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
