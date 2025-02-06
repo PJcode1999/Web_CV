@@ -24,7 +24,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'django-insecure-slljh6+h!+7jy!cuyybeu%ab%rzztkk9#=@t6q07e#d6v2n#5%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
@@ -133,6 +134,9 @@ MEDIA_URL = '/media/'  # URL path for accessing media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute path where media files are stored
 
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
