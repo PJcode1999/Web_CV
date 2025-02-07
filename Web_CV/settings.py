@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-
+import cloudinary_storage
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
+    'cloudinary_storage',
     'CV',
 ]
 
@@ -118,24 +119,30 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dak2v9udj',
+    'API_KEY': '592548471319345',
+    'API_SECRET': '1ZX3JNOVHGPUK7hDFDiA6oYCmmQ'
+}
 
 DEBUG = False
 
 STATIC_HOST = "https://d4663kmspf1sqa.cloudfront.net" if not DEBUG else ""
 STATIC_URL = STATIC_HOST + "/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Absolute path for collectstatic (production)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Absolute path for collectstatic (production)
 
 if DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Directory for static files (development)
 
 # Media settings
 MEDIA_URL = '/media/'  # URL path for accessing media files
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute path where media files are stored
 
-STORAGES = {
+STORAGES = { 
     "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
